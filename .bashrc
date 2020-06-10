@@ -18,3 +18,8 @@ alias poweroff='sudo poweroff'
 oldps1='[\u@\h \W]\$ '
 
 PS1='\[\e[0;36m\][\[\e[0;37m\]\u\[\e[0;97m\]@\[\e[0;37m\]\h \[\e[0;96m\]\W]\[\e[0;36m\e[0;93m\]\$ \[\e[m\]'
+
+## Write a nice looking message
+
+ufetch_arch.sh
+echo ""

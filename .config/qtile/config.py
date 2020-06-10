@@ -104,7 +104,7 @@ groups.append(
 		"scratchpad", [
 			DropDown(
 				"py_calc",
-				"/usr/bin/termite -e \"python3 /home/icebox/.scripts/py_calc.py\"",
+				"/usr/bin/termite -e py_calc_wrapper.sh",
 				width = 0.4,
 				height = 0.3,
 				x = 0.30,
