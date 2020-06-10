@@ -162,6 +162,10 @@ sep_defaults = dict (
 )
 
 
+### for showing power menu
+def show_power_menu(something):
+	suprocess.call("powermenu.sh")
+
 screens = [
     Screen(
         top=bar.Bar(
@@ -179,15 +183,28 @@ screens = [
                 # widget.WindowName(),
 				widget.Spacer(),
                 widget.Systray(),
+				widget.TextBox(text=""),
+				widget.DF(
+				 	format="{uf}/{s}{m} ({r:.0f}% used)",
+				 	visible_on_warn=False
+				),
+				widget.Sep(**sep_defaults),
+				widget.TextBox(text=""),
                 widget.CurrentLayout(),
 				widget.Sep(**sep_defaults),
 				widget.TextBox(text=""),
                 widget.Clock(format='%H:%M %a %D'),
 				widget.Sep(**sep_defaults),
-                widget.QuickExit(
-					default_text=" ",
-					countdown_format="{}s"
-				),
+                  widget.QuickExit(
+				  	default_text=" ",
+				  	countdown_format="{}s"
+				  ),
+#  				widget.TextBox(
+# 					text=" ",
+# 					mouse_callbacks= { 
+# 						"Button1" : show_power_menu
+# 					}
+# 				)
             ],
             20,
 	    background = "#333333"
