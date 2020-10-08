@@ -1,0 +1,13 @@
+# GIMP action-history
+
+(history-item "image-resize" 0)
+(history-item "layers-alpha-remove" 0)
+(history-item "layers-resize-to-image" 0)
+(history-item "dialogs-preferences" 0)
+(history-item "tools-flip" 0)
+(history-item "tools-bucket-fill" 0)
+(history-item "file-save" 0)
+(history-item "file-overwrite" 0)
+(history-item "file-quit" 1)
+
+# end of action-history
