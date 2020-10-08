@@ -1,12 +1,12 @@
 [options]
-#allow_bold = true
+allow_bold = true
 #audible_bell = false
 #bold_is_bright = true
 #cell_height_scale = 1.0
 #cell_width_scale = 1.0
 clickable_url = true
 #dynamic_title = true
-font = Ubuntu Mono, Ubuntu Mono Nerd Font Complete Mono 13
+font = FiraCode Nerd Font 12
 #fullscreen = true
 #icon_name = terminal
 #mouse_autohide = false
@@ -17,7 +17,7 @@ font = Ubuntu Mono, Ubuntu Mono Nerd Font Complete Mono 13
 scrollback_lines = 10000
 #search_wrap = true
 #urgent_on_bell = true
-#hyperlinks = false
+hyperlinks = true
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
 #browser = xdg-open
@@ -26,7 +26,7 @@ scrollback_lines = 10000
 #cursor_blink = system
 
 # "block", "underline" or "ibeam"
-#cursor_shape = block
+cursor_shape = block
 
 # Hide links that are no longer valid in url select overlay mode
 #filter_unmatched_urls = true
@@ -51,7 +51,7 @@ scrollback_lines = 10000
 #background = #3f3f3f
 
 # 20% background transparency (requires a compositor)
-background = rgba(63, 63, 63, 0.85)
+background = rgba(40, 42, 54, 0.8)
 
 # If unset, will reverse foreground and background
 # highlight = #2f2f2f

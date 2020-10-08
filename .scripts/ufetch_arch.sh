@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # ufetch-arch - tiny system info for arch
 
@@ -28,6 +28,9 @@ if [ -z "${WM}" ]; then
 else
 	envtype='WM'
 fi
+
+## fast fix
+WM="dwm"
 
 ## DEFINE COLORS
 

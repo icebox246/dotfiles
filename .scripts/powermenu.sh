@@ -1,6 +1,6 @@
 #!/bin/bash
 
-choice=$(echo -e "shutdown\nreboot\nlogout\nlock\ncancel" | dmenu -i -nb "#221d26" -fn "UbuntuMono-10" -p "How do you want to shutdown: " -h 20) 
+choice=$(echo -e "shutdown\nreboot\nlogout\nlock\ncancel" | dmenu -i -nb "#131516" -sb "#e53b68" -fn "Ubuntu Mono:pixelsize=14" -p "How do you want to shutdown: " ) 
 
 case "$choice" in 
 	shutdown)
@@ -10,9 +10,9 @@ case "$choice" in
 		reboot
 		;;
 	logout)
-		i3-msg exit
+		pkill X
 		;;
 	lock)
-		i3lock
+		slock
 		;;
 esac
