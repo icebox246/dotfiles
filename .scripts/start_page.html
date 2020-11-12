@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Start page</title>
+		<style>
+* {
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+		body {
+			display: flex;
+			height: 100vh;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background: #20212B;
+			color:#fff;
+		}
+		h1 {
+			font-size: 5em;
+		}
+		form {
+			width:100%;
+			display: flex;
+			justify-content:center;
+		}
+		#search {
+			font-size: 15px;
+			font-family: "FiraCode Nerd Font";
+			padding: 10px;
+			border-radius:10px;
+			background: #20212B;
+			border: 2px solid #333;
+			min-width: 50%;
+			color: white;
+			transition: border 0.5s;
+			text-align: center;
+
+			margin: auto;
+		}
+
+		#search:focus {
+			border: 2px solid white;	
+			outline: none;
+		}
+		#submit {
+			display:none;
+		}
+		</style>
+	</head>
+	<body>
+		<h1>
+			00:00
+		</h1> 
+		<form action="https://duckduckgo.com/" method="GET">
+			<input id="search" title="Search on DuckDuckGo.com" value ="" type="text" name="q">
+			<input id="submit" type="submit">
+		</form>
+
+		<script>
+			const timeDisp = document.querySelector('h1');	
+			const updateTime =() => {
+							let d = new Date();
+							let hours = d.getHours();
+							let minutes = d.getMinutes();
+							if (hours<10) hours = "0" + hours;
+							if (minutes<10) minutes = "0" + minutes;
+							timeDisp.innerText = `${hours}:${minutes}`;
+							//console.log("The time is: " + d.getHours() + ":" + d.getMinutes() )
+						};
+
+			updateTime();
+
+			setInterval(updateTime,5000);
+		</script>
+	</body>
+</html>

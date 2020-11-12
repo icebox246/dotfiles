@@ -1,0 +1,2 @@
+#!/bin/sh
+trayer --edge top --align right --widthtype pixel --width 100 --distancefrom right --distance 470 --height 20

@@ -55,7 +55,7 @@
   <resource identifier="${gimp_data_dir}/brushes/Media/Acrylic-04.gih" checksum="11311bde958533f3b7ada598af5c6d46">
   </resource>
 
-  <resource identifier="${gimp_data_dir}/brushes/Media/Acrylic-05.gih" checksum="69d6b269dffc2db6a6f44b380aaf1e5e">
+  <resource identifier="${gimp_data_dir}/brushes/Media/Acrylic-05.gih" checksum="50cfa85464d38b04c719770e045f4e3c">
   </resource>
 
   <resource identifier="${gimp_data_dir}/brushes/Legacy/confetti.gih" checksum="d136b60fdd9cf41693a485a329b32e95">
@@ -1303,6 +1303,15 @@
   <resource identifier="${gimp_data_dir}/palettes/Web.gpl" checksum="f02e8dfa23d01d6acfbab7f895c2dd16">
   </resource>
 
+  <resource identifier="agave Nerd Font" checksum="(null)">
+  </resource>
+
+  <resource identifier="agave Nerd Font Mono" checksum="(null)">
+  </resource>
+
+  <resource identifier="agave NF" checksum="(null)">
+  </resource>
+
   <resource identifier="C059" checksum="(null)">
   </resource>
 
@@ -1343,6 +1352,36 @@
   </resource>
 
   <resource identifier="D050000L" checksum="(null)">
+  </resource>
+
+  <resource identifier="FiraCode Nerd Font" checksum="(null)">
+  </resource>
+
+  <resource identifier="FiraCode Nerd Font Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="FiraCode Nerd Font Light" checksum="(null)">
+  </resource>
+
+  <resource identifier="FiraCode Nerd Font Medium" checksum="(null)">
+  </resource>
+
+  <resource identifier="FiraCode Nerd Font Mono" checksum="(null)">
+  </resource>
+
+  <resource identifier="FiraCode Nerd Font Mono Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="FiraCode Nerd Font Mono Light" checksum="(null)">
+  </resource>
+
+  <resource identifier="FiraCode Nerd Font Mono Medium" checksum="(null)">
+  </resource>
+
+  <resource identifier="FiraCode Nerd Font Mono weight=450" checksum="(null)">
+  </resource>
+
+  <resource identifier="FiraCode Nerd Font weight=450" checksum="(null)">
   </resource>
 
   <resource identifier="Monospace" checksum="(null)">

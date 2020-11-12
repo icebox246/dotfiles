@@ -1,0 +1,9 @@
+#!/bin/bash
+bluetoothctl -- power on && bluetoothctl -- connect 00:16:94:35:31:F4 
+
+if [[ -z "$(pulsemixer --list-sinks | grep My_Headset)" ]]; then
+	notify-send -u normal -i package-broken "Bluetooth headset" "Failed to connect"
+else
+	notify-send -u normal -i package-install "Bluetooth headset" "Connected successfully!"
+fi
+

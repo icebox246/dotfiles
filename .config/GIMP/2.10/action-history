@@ -1,5 +1,6 @@
 # GIMP action-history
 
+(history-item "file-quit" 1)
 (history-item "image-resize" 0)
 (history-item "layers-alpha-remove" 0)
 (history-item "layers-resize-to-image" 0)
@@ -8,6 +9,7 @@
 (history-item "tools-bucket-fill" 0)
 (history-item "file-save" 0)
 (history-item "file-overwrite" 0)
-(history-item "file-quit" 1)
+(history-item "tools-rect-select" 0)
+(history-item "edit-copy" 1)
 
 # end of action-history

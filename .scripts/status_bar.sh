@@ -1,5 +1,10 @@
 #!/bin/bash
 
+function volume_display {
+	[[ $(pulsemixer --get-mute) == 1 ]] && echo -n "遼 " || echo -n "蓼 "
+	echo -n $(pulsemixer --get-volume | cut -d" " -f1)% 
+}
+
 function battery_icon {
 	ICON=""
 	CHARGING_ICON=" "
@@ -15,10 +20,20 @@ function battery_icon {
 	echo "$ICON $CHARGING_ICON$POWER_LEVEL%"
 }
 
+function date_display {
+	echo -n " $(date "+%A %d.%m.%Y %H:%M")"
+}
+
+function notifications {
+	[[ "$(dunstctl is-paused)" == "false" ]] && echo -n "ﮠ" || echo -n "ﮡ"
+}
+
 while true; do
-	xsetroot -name "| $(([[ $(pulsemixer --get-mute) == 1 ]] && echo "遼") || echo "蓼") \
-$(pulsemixer --get-volume | cut -d" " -f1)% \
+	echo "\
+| $(notifications) \
+| $(volume_display) \
 | $(battery_icon) \
-|  $(date "+%A %d.%m.%Y %H:%M")  "
-	sleep 2
+| $(date_display) \
+ "
+	sleep 1
 done

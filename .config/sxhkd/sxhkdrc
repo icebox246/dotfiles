@@ -31,3 +31,19 @@ super + F6
 
 super + shift + F6
 	~/.screenlayout/disabled_second.sh
+
+#Open up Gvim
+super + e
+	gvim
+
+# Open up vifm
+super + f
+	termite -e ~/.scripts/vifmrun
+
+# Toggle notifications
+super + F11
+	dunstctl set-paused toggle
+
+# Take a scrot
+Print
+	scrot '%d-%m-%Y_$wx$h_%s_scrot.png' -e 'mv $f ~/Images/shots/'

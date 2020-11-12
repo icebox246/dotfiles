@@ -1,0 +1,4 @@
+#!/bin/sh
+
+killall sxhkd
+exec sxhkd -c ~/.config/sxhkd/sxhkdrc &
