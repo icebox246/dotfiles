@@ -7,10 +7,16 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'mattn/emmet-vim'
 Plug 'chrisbra/Colorizer'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'scrooloose/syntastic'
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
-let g:colorizer_auto_color = 1
+let g:colorizer_auto_color = 0
+let g:syntastic_cs_checkers = ['code_checker']
 
 let mapleader=" "
 
@@ -26,13 +32,17 @@ set background=dark
 
 filetype plugin on
 syntax on
-set mouse=i
+set mouse=a
 au FileType cpp setl ofu=ccomplete#CompleteCpp
+au FileType css set ofu=csscomplete#CompleteCSS
 set completeopt=menuone
 set number
+set relativenumber
 set tabstop=4
 set shiftwidth=4
 set hlsearch
+set wildmenu
+set incsearch
 
 " Fix for deafault complie flags
 let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_extra_conf.py"
@@ -41,13 +51,19 @@ hi Normal guibg=#282a36 ctermbg=NONE
 
 " Commenting
 
-autocmd FileType cpp nmap <buffer> <C-_> :s/^/\/\/<CR>:nohlsearch<CR>
-autocmd FileType cpp nmap <buffer> <C-/> :s/^/\/\/<CR>:nohlsearch<CR>
-autocmd FileType cpp nmap <buffer> <C-?> :s/^\/\///<CR>:nohlsearch<CR>
+nmap <C-_> :Comment <CR>
+vmap <C-_> :Comment <CR>
 
-autocmd FileType cpp vmap <buffer> <C-_> :s/^/\/\/<CR>:nohlsearch<CR>
-autocmd FileType cpp vmap <buffer> <C-/> :s/^/\/\/<CR>:nohlsearch<CR>
-autocmd FileType cpp vmap <buffer> <C-?> :s/^\/\///<CR>:nohlsearch<CR>
+" autocmd FileType cpp nmap <buffer> <C-_> :s/^/\/\/<CR>:nohlsearch<CR>
+" autocmd FileType cpp nmap <buffer> <C-/> :s/^/\/\/<CR>:nohlsearch<CR>
+" autocmd FileType cpp nmap <buffer> <C-?> :s/^\/\///<CR>:nohlsearch<CR>
+
+" autocmd FileType cpp vmap <buffer> <C-_> :s/^/\/\/<CR>:nohlsearch<CR>
+" autocmd FileType cpp vmap <buffer> <C-/> :s/^/\/\/<CR>:nohlsearch<CR>
+" autocmd FileType cpp vmap <buffer> <C-?> :s/^\/\///<CR>:nohlsearch<CR>
+
+" I hate Ex mode on Q (there is gQ)
+nmap Q <Nop>
 
 " Indenting
 
@@ -78,7 +94,8 @@ set guioptions-=m
 "" Copy/paste
 " nmap <C-S-V> "+gP
 " imap <C-S-V> <ESC>l<C-S-V>i
-" vmap <C-S-C> "+y
+vmap <C-y> "+y
 
+" Completion
 
 nohlsearch
