@@ -1,0 +1,113 @@
+#
+# wm independent hotkeys
+#
+
+# terminal emulator
+super + Return
+	alacritty
+
+# launch brave
+super + w
+	brave
+
+# program launcher
+super + d
+	dmenu_run
+
+# network settings
+super + n
+	alacritty -t nmtui -e nmtui
+
+# volume settings
+super + v
+	alacritty -t pmixer -e pulsemixer
+
+# music player settings
+super + m
+	alacritty -t pmixer -e ncmpcpp
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# Music controls
+super + KP_Left
+	mpc prev
+
+super + KP_Right
+	mpc next
+
+super + KP_Begin
+	mpc toggle
+
+XF86AudioNext
+	mpc next
+
+XF86AudioPrev
+	mpc prev
+
+XF86AudioPlay
+	mpc play
+
+XF86AudioPause
+	mpc pause
+
+#Volume controls
+XF86AudioLowerVolume
+	pulsemixer --change-volume -5
+
+XF86AudioRaiseVolume
+	pulsemixer --change-volume +5
+
+XF86AudioMute
+	pulsemixer --toggle-mute
+
+#Screen brightness
+XF86MonBrightnessUp
+	xbacklight -inc 2
+
+XF86MonBrightnessDown
+	xbacklight -dec 2
+
+#Screen locking
+super + shift + Escape
+	slock
+
+#Power off
+super + control + Delete
+	powermenu.sh
+
+#Toggle touchpads monitor
+super + F6
+	~/.screenlayout/enabled_second.sh
+
+super + shift + F6
+	~/.screenlayout/disabled_second.sh
+
+super + control + F6
+	~/.screenlayout/big_monitor.sh
+
+# Open up ranger
+super + f
+	alacritty -e ~/.scripts/ranger
+
+# Toggle notifications
+super + F11
+	dunstctl set-paused toggle
+
+# Take a scrot
+Print
+	scrot '%d-%m-%Y_$wx$h_%s_scrot.png' -e 'mv $f ~/Images/shots/'
+# Take a scrot
+control + Print
+	scrot '%d-%m-%Y_$wx$h_%s_scrot.png' -e 'mv $f ~/Images/shots/ && xclip -i -selection c -t image/png < ~/Images/shots/$f' -s -f
+
+
+# color pick
+super + shift + c
+	color_pick.sh
+
+# mount menu
+
+super + F8
+	mounter.sh

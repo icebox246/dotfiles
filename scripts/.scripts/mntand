@@ -1,0 +1,12 @@
+#!/bin/sh
+
+[[ $# -eq 1 ]] && (
+	[[ $1 == "u" ]] && fusermount -u ~/Android && 
+	notify-send -u normal -i package-install "Android FS" "Unmounted successfully!" ||
+	notify-send -u normal -i package-broken "Android FS" "Failed to unmount"
+) || (
+simple-mtpfs --device 1 -o auto_unmount ~/Android && 
+	notify-send -u normal -i package-install "Android FS" "Mounted successfully!" ||
+	notify-send -u normal -i package-broken "Android FS" "Failed to mount"
+)
+

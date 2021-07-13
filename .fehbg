@@ -1,2 +1,0 @@
-#!/bin/sh
-feh --no-fehbg --bg-center '/home/adam/Images/dark_forest_deer.jpg' '/home/adam/Images/black.png' 

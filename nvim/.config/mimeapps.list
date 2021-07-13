@@ -1,0 +1,20 @@
+[Default Applications]
+application/pdf=org.pwmt.zathura.desktop
+text/x-c++src=userapp-cat-NHXTR0.desktop
+text/html=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/about=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/unknown=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/msteams=teams.desktop
+image/png=sxiv.desktop
+
+[Added Associations]
+text/x-c++src=userapp-cat-NHXTR0.desktop;
+application/pdf=brave-browser.desktop;org.pwmt.zathura.desktop;
+text/html=org.qutebrowser.qutebrowser.desktop;
+image/png=sxiv.desktop;
+application/zip=userapp-unzip-BFZP40.desktop;
+application/octet-stream=nvim.desktop;
+
+[Removed Associations]

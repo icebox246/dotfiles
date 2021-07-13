@@ -1,0 +1,3 @@
+#!/bin/sh
+
+awk "/^-I/" .ccls > compile_flags.txt

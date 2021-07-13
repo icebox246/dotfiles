@@ -1,0 +1,16 @@
+#!/bin/bash
+HEADID="00:16:94:35:31:F4"
+
+if [[ $# -gt 0 ]]; then
+	[[ $1 == 1 ]] && HEADID="00:16:94:35:31:F4"
+	[[ $1 == 2 ]] && HEADID="B8:F8:BE:98:ED:A4"
+fi
+
+bluetoothctl -- power on && bluetoothctl -- connect "$HEADID"
+
+if [[ -z "$(pulsemixer --list-sinks | grep 'My_')" ]]; then
+	notify-send -u normal -i package-broken "Bluetooth headset" "Failed to connect"
+else
+	notify-send -u normal -i package-install "Bluetooth headset" "Connected successfully!"
+fi
+

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+( stalonetray -c $HOME/.config/bspwm/tray.conf & ) &
+
+sleep .1
+
+xdo hide -n stalonetray
+echo 0 > /tmp/tray_showed
+
+# xdo lower -N stalonetray
+# xdo above -N stalonetray -t $(xdo id -n root)
+

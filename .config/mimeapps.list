@@ -1,6 +1,0 @@
-[Default Applications]
-application/pdf=zathura.desktop
-text/x-c++src=userapp-cat-NHXTR0.desktop
-
-[Added Associations]
-text/x-c++src=userapp-cat-NHXTR0.desktop;

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+[ -f "/tmp/tray_showed" ] || echo 0 > /tmp/tray_showed
+
+if [ "$(cat /tmp/tray_showed)" == "1" ]; then
+	xdo hide -n stalonetray 
+	echo 0 > /tmp/tray_showed
+else
+	xdo show -n stalonetray 
+	xdo raise -n stalonetray 
+	bspc config right_padding 2
+	echo 1 > /tmp/tray_showed
+fi
