@@ -50,6 +50,7 @@ alias unmount="sudo unmount"
 
 oldps1='[\u@\h \W]\$ '
 
+
 ## PS1='\[\e[0;35m\][\[\e[0;97m\]\u\[\e[0;95m\]@\[\e[97m\]\h \[\e[35m\]\W]\[\e[95m\]\$ \[\e[m\]'
 # PS1='\[\e[0;97m\][\[\e[37m\]\W\[\e[0;97m\]]\[\e[95m\]\$ \[\e[m\]'
 WHITE="$(tput setaf 15)"
