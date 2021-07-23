@@ -5,6 +5,7 @@ pcall(require, "luarocks.loader")
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
+local xdg_menu = require("archmenu")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
@@ -12,7 +13,7 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
-local menubar = require("menubar")
+-- local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -94,6 +95,7 @@ mymainmenu = awful.menu({ items = {
 	{ "terminal", terminal },
 	{ "browser", "brave" },
 	{ "files", "pcmanfm" },
+	{ "apps", xdgmenu },
 	{ "awesome", myawesomemenu, beautiful.awesome_icon },
 	{ "power", "powermenu.sh &" },
 }
@@ -103,7 +105,7 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 
 -- Menubar configuration
-menubar.utils.terminal = terminal -- Set the terminal for applications that require it
+-- menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
 
 -- Keyboard map indicator and switcher
