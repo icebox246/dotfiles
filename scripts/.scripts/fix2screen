@@ -1,4 +1,6 @@
 #!/bin/sh
 
 xrandr --output eDP1 --primary
-xrandr --output HDMI2 --primary
+xrandr --output HDMI2 --primary --auto --left-of eDP1
+xrandr --output eDP1 --on
+~/.fehbg

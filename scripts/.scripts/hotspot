@@ -1,0 +1,25 @@
+#!/bin/sh
+
+[ "$(whoami)" == "root" ] || {
+	echo "You need to be root to use this"
+	exit 1
+}
+
+[ $# -lt 1 ] && {
+	echo "Usage: hotspot <start|stop>";
+	exit 1;
+};
+
+case $1 in
+	start)
+		create_ap --config /etc/create_ap.conf --daemon
+		;;
+	stop)
+		create_ap --stop wlo1
+		;;
+	*)
+		echo "Usage: hotspot <start|stop>";
+		exit 1;
+		;;
+esac
+		

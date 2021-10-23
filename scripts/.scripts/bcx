@@ -1,0 +1,9 @@
+#!/bin/sh
+
+EXTENSION_PATH="$HOME/.scripts/extensions.bc"
+
+cmd="bc -lq"
+
+[ -f "$EXTENSION_PATH" ] && cmd="$cmd $EXTENSION_PATH"
+
+$cmd

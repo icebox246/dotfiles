@@ -1,3 +1,4 @@
+#!/bin/sh
 # My xinitrc
 
 # Needed apps
@@ -32,6 +33,9 @@ dunst &
 # Start hotkey deamon
 sxhkd &
 
+# Start play-with-mpv server
+play-with-mpv &
+
 # Browser deamon
 # ~/.scripts/qutebrowser_deamon_keeper.sh &
 #qutebrowser &
@@ -43,4 +47,4 @@ sxhkd &
 #xsetroot -cursor_name left_ptr
 
 # Run bspwm
-exec awesome
+awesome

@@ -14,12 +14,19 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround' 
 Plug 'preservim/nerdtree'
 Plug 'tikhomirov/vim-glsl'
-Plug 'kien/ctrlp.vim'
+" Plug 'kien/ctrlp.vim'
 
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
+Plug 'glepnir/dashboard-nvim'
+Plug 'junegunn/fzf.vim'
+
+Plug 'rhysd/vim-clang-format'
+
+
+Plug 'unblevable/quick-scope'
 
 call plug#end()
 
@@ -28,6 +35,12 @@ set encoding=utf-8
 let g:colorizer_auto_color = 1
 
 let mapleader=" "
+
+" go to definition
+nmap <silent> gd <Plug>(coc-definition)
+
+" Map ctrl p to better searcher
+nmap <silent> <C-p> :Files<CR>
 
 " Setup for emmet
 let	g:user_emmet_leader_key="<C-,>" 
@@ -55,8 +68,12 @@ let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_extra_conf.py"
 hi Normal guibg=#282a36 ctermbg=NONE
 
 " Indenting
-
-nmap <S-T>T gg=G''zz
+let g:clang_format#style_options = {
+			\ "BasedOnStyle": "Google",
+			\ "IndentWidth": 4,
+			\ "UseTab": "Never"}
+autocmd FileType c,cpp nnoremap <buffer><S-T>T :<C-u>ClangFormat<CR>:w<CR>
+nmap <buffer><S-T>T gg=G''zz
 
 " Completion with tab
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -78,12 +95,12 @@ command W :w
 command RootWrite :w !sudo tee %
 
 " Binds for tab work
-nmap te :tabnew<Space>
-nmap tn :tabn<CR>
-nmap tp :tabp<CR>
+nmap <leader>te :tabnew<Space>
+nmap <leader>tn :tabn<CR>
+nmap <leader>tp :tabp<CR>
 
 " GUI specific things
-set guifont=FiraCode\ Nerd\ Font\ 12
+set guifont=GohuGohuFont\ Nerd\ Font\ 11
 set guioptions-=T
 set guioptions-=r
 set guioptions-=b
@@ -112,6 +129,73 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 
 let g:neovide_transparency=0.65
 
+" Switch between source and header in c/cpp
+autocmd FileType c,cpp map <buffer><silent><leader>s :CocCommand clangd.switchSourceHeader<CR>
+
+" Show quick-scope only on when needed
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+" " Add margin to scolling
+" set scrolloff=5
+
+" Change directory to current file
+command Cdf :cd %:p:h
+
+" Compiling in cpp
+autocmd FileType c,cpp map <buffer><leader>b :make %:r<CR>:split term://./%:r<CR>
+
+" Dashboard
+let g:dashboard_default_executive ='fzf'
+
+" let g:dashboard_custom_header = [
+" \ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
+" \ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
+" \ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
+" \ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
+" \ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
+" \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+" \]
+
+let g:dashboard_custom_header =<< trim END
+	=================     ===============     ===============   ========  ========
+	\\ . . . . . . .\\   //. . . . . . .\\   //. . . . . . .\\  \\. . .\\// . . //
+	||. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\/ . . .||
+	|| . .||   ||. . || || . .||   ||. . || || . .||   ||. . || ||. . . . . . . ||
+	||. . ||   || . .|| ||. . ||   || . .|| ||. . ||   || . .|| || . | . . . . .||
+	|| . .||   ||. _-|| ||-_ .||   ||. . || || . .||   ||. _-|| ||-_.|\ . . . . ||
+	||. . ||   ||-'  || ||  `-||   || . .|| ||. . ||   ||-'  || ||  `|\_ . .|. .||
+	|| . _||   ||    || ||    ||   ||_ . || || . _||   ||    || ||   |\ `-_/| . ||
+	||_-' ||  .|/    || ||    \|.  || `-_|| ||_-' ||  .|/    || ||   | \  / |-_.||
+	||    ||_-'      || ||      `-_||    || ||    ||_-'      || ||   | \  / |  `||
+	||    `'         || ||         `'    || ||    `'         || ||   | \  / |   ||
+	||            .===' `===.         .==='.`===.         .===' /==. |  \/  |   ||
+	||         .=='   \_|-_ `===. .==='   _|_   `===. .===' _-|/   `==  \/  |   ||
+	||      .=='    _-'    `-_  `='    _-'   `-_    `='  _-'   `-_  /|  \/  |   ||
+	||   .=='    _-'          '-__\._-'         '-_./__-'         `' |. /|  |   ||
+	||.=='    _-'                                                     `' |  /==.||
+	=='    _-'                        N E O V I M                         \/   `==
+	\   _-'                                                                `-_   /
+	`''                                                                      ``'
+END
+
+
+autocmd FileType dashboard nnoremap <silent><buffer> <Leader>fh :DashboardFindHistory<CR>
+autocmd FileType dashboard nnoremap <silent><buffer> <Leader>ff :DashboardFindFile<CR>
+autocmd FileType dashboard nnoremap <silent><buffer> <Leader>tc :DashboardChangeColorscheme<CR>
+autocmd FileType dashboard nnoremap <silent><buffer> <Leader>fa :DashboardFindWord<CR>
+autocmd FileType dashboard nnoremap <silent><buffer> <Leader>fb :DashboardJumpMark<CR>
+autocmd FileType dashboard nnoremap <silent><buffer> <Leader>cn :DashboardNewFile<CR>
+
+
+let g:dashboard_custom_shortcut_icon={
+			\ 'last_session' : '   ',
+			\ 'find_history' : 'ﭯ   ',
+			\ 'find_file' : '   ',
+			\ 'new_file' : '   ',
+			\ 'change_colorscheme' : '   ',
+			\ 'find_word' : '   ',
+			\ 'book_marks' : '   ',
+			\}
 
 nohlsearch
 

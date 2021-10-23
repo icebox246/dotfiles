@@ -473,7 +473,8 @@ clientkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
     awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
-              {description = "move to screen", group = "client"})
+              {description = "move to screen", group = "client"}),
+	awful.key({ modkey, "Shift" }, "b", function(c) awful.titlebar.toggle(c) end,	{description = "toggle titlebar", group="client"})
     -- awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
     --           {description = "toggle keep on top", group = "client"}),
     -- awful.key({ modkey,           }, "n",
@@ -627,13 +628,13 @@ awful.rules.rules = {
       }, properties = { floating = true }},
 
     -- Add titlebars to normal clients and dialogs
-    { rule_any = {type = { "dialog" }
-      }, properties = { titlebars_enabled = true }
+    { rule_any = {type = { "dialog" }, role= {"pop-up"}
+      }, properties = { titlebars_enabled = true, ontop=true }
     },
 
 	{ 
 		rule_any = { 
-			name = {"nmtui", "pmixer"}
+			instance = {"popped"}
 		},
 		properties = {
 			floating = true,
@@ -662,6 +663,8 @@ client.connect_signal("manage", function (c)
         -- Prevent clients from being unreachable after screen count changes.
         awful.placement.no_offscreen(c)
     end
+
+	
 end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
@@ -678,9 +681,11 @@ client.connect_signal("request::titlebars", function(c)
         end)
     )
 
-	awful.titlebar(c) : setup {
+	awful.titlebar(c, {
+		size= beautiful.titlebar_height
+	}) : setup {
         { -- Left
-            awful.titlebar.widget.iconwidget(c),
+            -- awful.titlebar.widget.iconwidget(c),
             buttons = buttons,
             layout  = wibox.layout.fixed.horizontal
         },
@@ -694,9 +699,9 @@ client.connect_signal("request::titlebars", function(c)
         },
         { -- Right
             -- awful.titlebar.widget.floatingbutton (c),
-            awful.titlebar.widget.maximizedbutton(c),
             awful.titlebar.widget.stickybutton   (c),
             awful.titlebar.widget.ontopbutton    (c),
+            awful.titlebar.widget.maximizedbutton(c),
             awful.titlebar.widget.closebutton    (c),
             layout = wibox.layout.fixed.horizontal()
         },
@@ -709,6 +714,11 @@ client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = true})
 end)
 
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+ 
+
+client.connect_signal("focus", function(c) 
+	c.border_color = beautiful.border_focus
+
+end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}

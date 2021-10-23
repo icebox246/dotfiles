@@ -1,6 +1,6 @@
 #!/bin/bash
 
-choice=$(echo -e "shutdown\nreboot\nlogout\nlock\ncancel" | dmenu -i -sb "#e53b68" -p "How do you want to shutdown: " ) 
+choice=$(echo -e "shutdown\nreboot\nlogout\nlock\ncancel" | dmenu -p "Power:" ) 
 
 case "$choice" in 
 	shutdown)

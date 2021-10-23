@@ -9,6 +9,8 @@ zstyle :compinstall filename '/home/adam/.zshrc'
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+
+
 if [ "$TERM" = "linux" ]; then
 	echo -en "\e]P0000000" #black
 	echo -en "\e]P0000000" #darkgrey
@@ -40,8 +42,14 @@ SAVEHIST=1000
 setopt autocd
 bindkey -v
 
+# fzf
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+
+# export FZF_DEFAULT_COMMAND="find -L"
+
 alias ls='ls --color=auto'
-alias pacman='sudo pacman'
+alias pacm='sudo pacman'
 alias reboot='sudo reboot'
 alias poweroff='sudo poweroff'
 alias btctl="bluetoothctl"
@@ -81,10 +89,28 @@ function git_module() {
 	return $RETURN_CODE
 }
 
+# Vi mode indicator
+
+VICHAR1="["
+VICHAR2="]"
+
+function zle-line-init zle-keymap-select {
+    VICHAR1="${${KEYMAP/vicmd/:}/(main|viins)/[}"
+    VICHAR2="${${KEYMAP/vicmd/:}/(main|viins)/]}"
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+# Custom prompt
+
 setopt PROMPT_SUBST
 
-PROMPT='%F{15}[%B%F{12}%1~%b%F{15}]%(0?.%F{13}.%F{9})%(!.#.$) %f'
+PROMPT='%F{15}$VICHAR1%B%F{12}%1~%b%F{15}$VICHAR2%(0?.%F{13}.%F{9})%(!.#.$) %f'
 RPROMPT='$(git_module)'
 
 
 source /home/adam/.config/broot/launcher/bash/br
+
+rfetch

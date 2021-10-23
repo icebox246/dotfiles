@@ -16,15 +16,15 @@ super + d
 
 # network settings
 super + n
-	alacritty -t nmtui -e nmtui
+	alacritty --class popped -e nmtui
 
 # volume settings
 super + v
-	alacritty -t pmixer -e pulsemixer
+	alacritty --class popped -e pulsemixer
 
 # music player settings
 super + m
-	alacritty -t pmixer -e ncmpcpp
+	alacritty --class popped -e ncmpcpp
 
 # make sxhkd reload its configuration files:
 super + Escape

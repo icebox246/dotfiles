@@ -1,12 +1,19 @@
 #!/bin/sh
 
+MNT_PATH="$HOME/Android"
+
+
 [[ $# -eq 1 ]] && (
-	[[ $1 == "u" ]] && fusermount -u ~/Android && 
-	notify-send -u normal -i package-install "Android FS" "Unmounted successfully!" ||
+[[ $1 == "u" ]] && fusermount -u $MNT_PATH && 
+	notify-send -u normal -i package-install "Android FS" "Unmounted successfully!" && 
+	rm -r $MNT_PATH ||
 	notify-send -u normal -i package-broken "Android FS" "Failed to unmount"
-) || (
-simple-mtpfs --device 1 -o auto_unmount ~/Android && 
-	notify-send -u normal -i package-install "Android FS" "Mounted successfully!" ||
-	notify-send -u normal -i package-broken "Android FS" "Failed to mount"
+	) || (
+	[ -d ~/Android ] || mkdir $MNT_PATH
+	simple-mtpfs --device 1 -o auto_unmount $MNT_PATH && 
+		notify-send -u normal -i package-install "Android FS" "Mounted successfully!" ||
+		(notify-send -u normal -i package-broken "Android FS" "Failed to mount" && 
+		rm -r $MNT_PATH
+	)
 )
 
