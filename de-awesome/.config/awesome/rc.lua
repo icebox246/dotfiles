@@ -234,7 +234,7 @@ mybacklight = awful.widget.watch(
 )
 
 mybattery = awful.widget.watch(
-	"cat /sys/class/power_supply/BAT0/capacity /sys/class/power_supply/BAT0/status",
+	"cat /sys/class/power_supply/BAT0/capacity /sys/class/power_supply/BAT0/status || cat /sys/class/power_supply/BAT1/capacity /sys/class/power_supply/BAT1/status",
 	5,
 	function(widget,out)
 		lines = split(out,"\n")
