@@ -48,6 +48,10 @@ let g:user_emmet_mode='a'
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
+" yank to clipboard
+nnoremap <C-y> "+y
+vnoremap <C-y> "+y
+
 colorscheme dracula
 " let g:airline_theme='angr'
 set background=dark
