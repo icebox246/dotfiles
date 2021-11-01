@@ -1,0 +1,20 @@
+#!/bin/sh
+
+#set working area
+xsetwacom set "Tablet Monitor Pen stylus" MapToOutput 1920x1080+0+0
+
+# secondary button on pen
+xsetwacom set "Tablet Monitor Pen stylus" Button 2 "key e"
+
+# tirtiary button on pen
+xsetwacom set "Tablet Monitor Pen stylus" Button 3 2
+
+# first button on pad
+xsetwacom set "Tablet Monitor Pad pad" Button 1 "key +ctrl z -ctrl"
+
+# second button on pad
+#xsetwacom set "Tablet Monitor Pad pad" Button 2 ""
+
+# third button on pad
+xsetwacom set "Tablet Monitor Pad pad" Button 3 "key b"
+xsetwacom set "Tablet Monitor Pad pad" Button 8 "key n"
