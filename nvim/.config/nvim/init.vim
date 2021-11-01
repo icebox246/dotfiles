@@ -36,6 +36,10 @@ let g:colorizer_auto_color = 1
 
 let mapleader=" "
 
+" Haskell binds
+au FileType haskell,lhaskell setlocal expandtab
+au FileType haskell,lhaskell nnoremap <buffer><silent>TT :%!stylish-haskell
+
 " go to definition
 nmap <silent> gd <Plug>(coc-definition)
 
