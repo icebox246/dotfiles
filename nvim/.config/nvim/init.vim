@@ -38,7 +38,7 @@ let mapleader=" "
 
 " Haskell binds
 au FileType haskell,lhaskell setlocal expandtab
-au FileType haskell,lhaskell nnoremap <buffer><silent>TT :%!stylish-haskell
+au FileType haskell,lhaskell nnoremap <buffer><silent>TT :%!stylish-haskell<CR>
 
 " go to definition
 nmap <silent> gd <Plug>(coc-definition)
