@@ -31,6 +31,9 @@ Plug 'unblevable/quick-scope'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'alx741/vim-stylishask'
 
+Plug 'dNitro/vim-pug-complete'
+Plug 'digitaltoad/vim-pug'
+
 call plug#end()
 
 set encoding=utf-8
@@ -38,6 +41,16 @@ set encoding=utf-8
 let g:colorizer_auto_color = 1
 
 let mapleader=" "
+
+" Coc rename
+nmap <leader>r :CocCommand document.renameCurrentWord<CR>
+
+" Coc multicursor
+nmap <silent> <leader>c <Plug>(coc-cursors-position)
+nmap <silent> <leader>d <Plug>(coc-cursors-word)
+xmap <silent> <leader>d <Plug>(coc-cursors-range)
+
+nmap <leader>x  <Plug>(coc-cursors-operator)
 
 " Haskell binds
 au FileType haskell,lhaskell setlocal expandtab
