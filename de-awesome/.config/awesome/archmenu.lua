@@ -10,6 +10,7 @@
 
  local menu251bd8143891238ecedc306508e29017 = {
      {"GZDoom", "gzdoom ", "/usr/share/icons/hicolor/256x256/apps/gzdoom.xpm" },
+     {"Quake", "quakespasm", "/usr/share/icons/hicolor/16x16/apps/quakespasm.png" },
      {"Steam (Runtime)", "/usr/bin/steam-runtime ", "/usr/share/icons/hicolor/16x16/apps/steam.png" },
  }
 
@@ -17,6 +18,7 @@
      {"FontForge", "fontforge ", "/usr/share/icons/hicolor/16x16/apps/org.fontforge.FontForge.png" },
      {"GNU Image Manipulation Program", "gimp-2.10 ", "/usr/share/icons/hicolor/16x16/apps/gimp.png" },
      {"Gpick", "gpick ", "/usr/share/icons/hicolor/48x48/apps/gpick.png" },
+     {"Krita", "krita ", "/usr/share/icons/hicolor/16x16/apps/krita.png" },
      {"LibreOffice Draw", "libreoffice --draw ", "/usr/share/icons/hicolor/16x16/apps/libreoffice-draw.png" },
      {"XDvi", "xdvi "},
  }
@@ -51,7 +53,6 @@
  }
 
  local menu52dd1c847264a75f400961bfb4d1c849 = {
-     {"EasyTAG", "easytag ", "/usr/share/icons/hicolor/16x16/apps/easytag.png" },
      {"OBS Studio", "obs", "/usr/share/icons/hicolor/256x256/apps/com.obsproject.Studio.png" },
      {"Qt V4L2 test Utility", "qv4l2", "/usr/share/icons/hicolor/16x16/apps/qv4l2.png" },
      {"Qt V4L2 video capture utility", "qvidcap", "/usr/share/icons/hicolor/16x16/apps/qvidcap.png" },
@@ -67,6 +68,7 @@
      {"Oracle VM VirtualBox", "VirtualBox ", "/usr/share/icons/hicolor/16x16/mimetypes/virtualbox.png" },
      {"Termite", "termite"},
      {"Vifm", "alacritty -e vifm ", "/usr/share/pixmaps/vifm.png" },
+     {"Wifi Hotspot", "sh -c 'env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY /usr/bin/wihotspot'", "/usr/share/icons/hicolor/48x48/apps/wihotspot.png" },
      {"conky", "conky --daemonize --pause=1"},
      {"ranger", "alacritty -e ranger"},
  }

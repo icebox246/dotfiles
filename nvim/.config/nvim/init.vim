@@ -40,6 +40,8 @@ set encoding=utf-8
 
 let g:colorizer_auto_color = 1
 
+set relativenumber
+
 let mapleader=" "
 
 " Coc rename
@@ -118,7 +120,9 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " Quick terminal
 set splitbelow
-nmap <C-T>t :10split term://bash<CR><C-w>k
+nmap <silent> <leader>tt :execute ":split term://".input("Command: ","zsh","shellcmd")""<CR>
+tnoremap <Esc> <C-\><C-n>
+tnoremap <C-w> <C-\><C-n><C-w>
 
 " Kind of bad idea but may be helpful
 command W :w

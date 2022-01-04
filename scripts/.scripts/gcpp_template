@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int n;
+int m;
+using ll = long long;
+struct vec {
+	ll x, y;
+};
+
+struct line {
+	vec a, b;
+};
+
+vec operator+(vec a, vec b) { return {a.x + b.x, a.y + b.y}; }
+vec operator-(vec a, vec b) { return {a.x - b.x, a.y - b.y}; }
+vec operator*(vec a, vec b) { return {a.x * b.x, a.y * b.y}; }
+bool operator==(vec a, vec b) { return a.x == b.x && a.y == b.y; }
+istream &operator>>(istream &s, vec &v) { return s >> v.x >> v.y; }
+ostream &operator<<(ostream &s, vec v) { return s << v.x << ' ' << v.y; }
+ll cross(vec a, vec b) { return (a.x * b.y - b.x * a.y); }
+
+ll sig(ll n) { return (n ? (n / llabs(n)) : 0); }
+
+
+int main() {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+
+	cin>>n;
+}

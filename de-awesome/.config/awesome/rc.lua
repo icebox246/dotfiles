@@ -341,6 +341,8 @@ awful.screen.connect_for_each_screen(function(s)
             s.mylayoutbox,
         },
     }
+
+	s.mywibox.visible = false
 end)
 -- }}}
 
@@ -665,6 +667,20 @@ client.connect_signal("manage", function (c)
     end
 
 	
+end)
+
+-- Hiding and showing borders when needed:
+screen.connect_signal("arrange", function (s)
+    local max = s.selected_tag.layout.name == "max"
+    local only_one = #s.tiled_clients == 1 
+
+    for _, c in pairs(s.clients) do
+        if (max or only_one) and not c.floating or c.maximized then
+            c.border_width = 0
+        else
+            c.border_width = beautiful.border_width
+        end
+    end
 end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ -z $1 ]]; then
+		echo "One argument needed!"
+	  	exit 1
+fi
+echo "//Geo Project: $1" > ./$1.cpp
+cat ~/.scripts/gcpp_template >> ./$1.cpp
+
+echo "Created new project $1!!"
