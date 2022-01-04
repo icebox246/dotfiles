@@ -173,6 +173,7 @@ screen.connect_signal("property::geometry", set_wallpaper)
 
 
 function split(str,sep)
+	if str == nil then return {""} end
     local array = {}
     local reg = string.format("([^%s]+)",sep)
     for mem in string.gmatch(str,reg) do
