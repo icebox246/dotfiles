@@ -73,7 +73,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> <C-p> :Files<CR>
 
 " Setup for emmet
-let	g:user_emmet_leader_key="<C-,>" 
+let	g:user_emmet_leader_key="<c-m>" 
 let g:user_emmet_mode='a'
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
@@ -106,7 +106,7 @@ let g:clang_format#style_options = {
 			\ "BasedOnStyle": "Google",
 			\ "IndentWidth": 4,
 			\ "UseTab": "Never"}
-autocmd FileType c,cpp nnoremap <buffer><S-T>T :<C-u>ClangFormat<CR>:w<CR>
+autocmd FileType c,cpp,javascript nnoremap <buffer><S-T>T :<C-u>ClangFormat<CR>:w<CR>
 nmap <buffer><S-T>T gg=G''zz
 
 " Completion with tab

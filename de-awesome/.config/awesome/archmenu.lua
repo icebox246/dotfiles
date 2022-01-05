@@ -1,7 +1,6 @@
  local menu98edb85b00d9527ad5acebe451b3fae6 = {
-     {"Neovide (nvim)", "neovide ", "/usr/share/icons/hicolor/128x128/apps/nvim.png" },
      {"Neovim", "alacritty -e nvim ", "/usr/share/icons/hicolor/128x128/apps/nvim.png" },
-     {"Winetricks", "winetricks --gui"},
+     {"Xarchiver", "xarchiver ", "/usr/share/icons/hicolor/16x16/apps/xarchiver.png" },
  }
 
  local menude7a22a0c94aa64ba2449e520aa20c99 = {
@@ -10,7 +9,6 @@
 
  local menu251bd8143891238ecedc306508e29017 = {
      {"GZDoom", "gzdoom ", "/usr/share/icons/hicolor/256x256/apps/gzdoom.xpm" },
-     {"Quake", "quakespasm", "/usr/share/icons/hicolor/16x16/apps/quakespasm.png" },
      {"Steam (Runtime)", "/usr/bin/steam-runtime ", "/usr/share/icons/hicolor/16x16/apps/steam.png" },
  }
 
@@ -18,6 +16,7 @@
      {"FontForge", "fontforge ", "/usr/share/icons/hicolor/16x16/apps/org.fontforge.FontForge.png" },
      {"GNU Image Manipulation Program", "gimp-2.10 ", "/usr/share/icons/hicolor/16x16/apps/gimp.png" },
      {"Gpick", "gpick ", "/usr/share/icons/hicolor/48x48/apps/gpick.png" },
+     {"Inkscape", "inkscape ", "/usr/share/icons/hicolor/16x16/apps/org.inkscape.Inkscape.png" },
      {"Krita", "krita ", "/usr/share/icons/hicolor/16x16/apps/krita.png" },
      {"LibreOffice Draw", "libreoffice --draw ", "/usr/share/icons/hicolor/16x16/apps/libreoffice-draw.png" },
      {"XDvi", "xdvi "},
@@ -26,13 +25,14 @@
  local menuc8205c7636e728d448c2774e6a4a944b = {
      {"Avahi SSH Server Browser", "/usr/bin/bssh"},
      {"Avahi VNC Server Browser", "/usr/bin/bvnc"},
-     {"Brave", "brave ", "/usr/share/pixmaps/brave-desktop.png" },
+     {"Brave", "brave ", "/usr/share/icons/hicolor/16x16/apps/brave-desktop.png" },
      {"Discord", "/usr/bin/discord", "/usr/share/pixmaps/discord.png" },
      {"Firefox", "/usr/lib/firefox/firefox ", "/usr/share/icons/hicolor/16x16/apps/firefox.png" },
      {"Microsoft Teams - Preview", "teams ", "/usr/share/pixmaps/teams.png" },
      {"Steam (Runtime)", "/usr/bin/steam-runtime ", "/usr/share/icons/hicolor/16x16/apps/steam.png" },
      {"TeamSpeak 3", "teamspeak3 "},
      {"TigerVNC Viewer", "/usr/bin/vncviewer", "/usr/share/icons/hicolor/16x16/apps/tigervnc.png" },
+     {"WeeChat", "alacritty -e weechat ", "/usr/share/icons/hicolor/16x16/apps/weechat.png" },
  }
 
  local menudf814135652a5a308fea15bff37ea284 = {
@@ -54,6 +54,7 @@
 
  local menu52dd1c847264a75f400961bfb4d1c849 = {
      {"OBS Studio", "obs", "/usr/share/icons/hicolor/256x256/apps/com.obsproject.Studio.png" },
+     {"Play With MPV (server)", "/usr/bin/play-with-mpv", "/usr/share/icons/hicolor/16x16/apps/mpv.png" },
      {"Qt V4L2 test Utility", "qv4l2", "/usr/share/icons/hicolor/16x16/apps/qv4l2.png" },
      {"Qt V4L2 video capture utility", "qvidcap", "/usr/share/icons/hicolor/16x16/apps/qvidcap.png" },
      {"mpv Media Player", "mpv --player-operation-mode=pseudo-gui -- ", "/usr/share/icons/hicolor/16x16/apps/mpv.png" },
@@ -65,10 +66,9 @@
      {"File Manager PCManFM", "pcmanfm "},
      {"Hardware Locality lstopo", "lstopo"},
      {"Htop", "alacritty -e htop", "/usr/share/pixmaps/htop.png" },
+     {"Manage Printing", "/usr/bin/xdg-open http://localhost:631/", "/usr/share/icons/hicolor/16x16/apps/cups.png" },
      {"Oracle VM VirtualBox", "VirtualBox ", "/usr/share/icons/hicolor/16x16/mimetypes/virtualbox.png" },
-     {"Termite", "termite"},
      {"Vifm", "alacritty -e vifm ", "/usr/share/pixmaps/vifm.png" },
-     {"Wifi Hotspot", "sh -c 'env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY /usr/bin/wihotspot'", "/usr/share/icons/hicolor/48x48/apps/wihotspot.png" },
      {"conky", "conky --daemonize --pause=1"},
      {"ranger", "alacritty -e ranger"},
  }

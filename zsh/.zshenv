@@ -1,8 +1,9 @@
 export QT_QPA_PLATFORMTHEME=qt5ct
-export PATH="$HOME/.scripts:$PATH"
+export PATH="$HOME/.scripts:$HOME/.local/bin:$PATH"
 export EDITOR=nvim
 export BROWSER=brave
 export LANG=en_US.UTF-8
+export GHCUP_USE_XDG_DIRS=1
 # [ -f ~/.zshrc ] && . ~/.zshrc
 #
 
