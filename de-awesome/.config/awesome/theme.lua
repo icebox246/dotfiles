@@ -2,6 +2,8 @@
 -- Default awesome theme --
 ---------------------------
 
+
+
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
@@ -11,7 +13,11 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "Gohu GohuFont Nerd Font 11"
+function dpi(a) 
+    return a
+end
+
+theme.font          = "Gohu GohuFont Nerd Font 14px"
 
 theme.bg_normal     = "#282a36ef"
 theme.bg_focus      = "#6e5991ef"

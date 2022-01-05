@@ -31,13 +31,28 @@ Plug 'unblevable/quick-scope'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'alx741/vim-stylishask'
 
+Plug 'dNitro/vim-pug-complete'
+Plug 'digitaltoad/vim-pug'
+
 call plug#end()
 
 set encoding=utf-8
 
 let g:colorizer_auto_color = 1
 
+set relativenumber
+
 let mapleader=" "
+
+" Coc rename
+nmap <leader>r :CocCommand document.renameCurrentWord<CR>
+
+" Coc multicursor
+nmap <silent> <leader>c <Plug>(coc-cursors-position)
+nmap <silent> <leader>d <Plug>(coc-cursors-word)
+xmap <silent> <leader>d <Plug>(coc-cursors-range)
+
+nmap <leader>x  <Plug>(coc-cursors-operator)
 
 " Haskell binds
 au FileType haskell,lhaskell setlocal expandtab
@@ -105,7 +120,9 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " Quick terminal
 set splitbelow
-nmap <C-T>t :10split term://bash<CR><C-w>k
+nmap <silent> <leader>tt :execute ":split term://".input("Command: ","zsh","shellcmd")""<CR>
+tnoremap <Esc> <C-\><C-n>
+tnoremap <C-w> <C-\><C-n><C-w>
 
 " Kind of bad idea but may be helpful
 command W :w
