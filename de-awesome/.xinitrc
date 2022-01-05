@@ -1,20 +1,11 @@
 #!/bin/sh
 # My xinitrc
 
-# Needed apps
-# ~/.scripts/status_bar.sh | ~/.scripts/dwm_status &
-# (~/.screenlayout/default.sh &)
-# [ -n "$(xrandr --listactivemonitors | grep 'HDMI2')" ] && (~/.screenlayout/big_monitor.sh && fix2screen &) || (~/.screenlayout/default.sh &)
-
-
+# start picom
 picom --experimental-backends &
+
 # sxhkd -c ~/.config/sxhkd/sxhkdrc &
 ~/.scripts/battery_alert_deamon.sh &
-
-# pulseaudio
-
-# Music Deamon
-# [ ! -s ~/.config/mpd/pid ] && mpd &
 
 # Stop music playing on start
 mpc stop
@@ -31,9 +22,6 @@ xset s off
 # Set the default for second monitor
 export SND_MON=0
 
-# Start system tray
-# ~/.scripts/start_stalonetray & 
-
 # Start notification deamon
 dunst &
 
@@ -43,20 +31,11 @@ sxhkd &
 # Start play-with-mpv server
 play-with-mpv &
 
-# Browser deamon
-# ~/.scripts/qutebrowser_deamon_keeper.sh &
-#qutebrowser &
+# settings for blanking
+xset dpms 900 0 0
 
-# Starting up dwm
-# ~/.scripts/start_dwm
-
-# setting cursor
-#xsetroot -cursor_name left_ptr
-
-# setxkbmap -option caps:escape
-
-# Run bspwm
-
+# simple script for multimonitor
 fix2screen &
 
+# start window manager
 awesome
