@@ -1,0 +1,3 @@
+#!/bin/sh
+
+alacritty --config-file ~/.config/alacritty/alt_alacritty.yml

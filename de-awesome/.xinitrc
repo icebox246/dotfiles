@@ -3,23 +3,30 @@
 
 # Needed apps
 # ~/.scripts/status_bar.sh | ~/.scripts/dwm_status &
-(~/.screenlayout/default.sh &)
-[ -n "$(xrandr --listactivemonitors | grep 'HDMI2')" ] && (~/.screenlayout/big_monitor.sh && fix2screen &) || (~/.screenlayout/default.sh &)
+# (~/.screenlayout/default.sh &)
+# [ -n "$(xrandr --listactivemonitors | grep 'HDMI2')" ] && (~/.screenlayout/big_monitor.sh && fix2screen &) || (~/.screenlayout/default.sh &)
+
+
 picom --experimental-backends &
 # sxhkd -c ~/.config/sxhkd/sxhkdrc &
 ~/.scripts/battery_alert_deamon.sh &
 
+# pulseaudio
+
 # Music Deamon
-[ ! -s ~/.config/mpd/pid ] && mpd
+# [ ! -s ~/.config/mpd/pid ] && mpd &
 
 # Stop music playing on start
 mpc stop
 
 # Setting keymap
-setxkbmap pl
+setxkbmap pl &
+
+# Disable screen saving
+xset s off
 
 # Setting background image 
-~/.fehbg
+~/.fehbg &
 
 # Set the default for second monitor
 export SND_MON=0
@@ -46,5 +53,10 @@ play-with-mpv &
 # setting cursor
 #xsetroot -cursor_name left_ptr
 
+# setxkbmap -option caps:escape
+
 # Run bspwm
+
+fix2screen &
+
 awesome
