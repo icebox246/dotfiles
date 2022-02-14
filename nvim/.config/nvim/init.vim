@@ -34,6 +34,8 @@ Plug 'alx741/vim-stylishask'
 Plug 'dNitro/vim-pug-complete'
 Plug 'digitaltoad/vim-pug'
 
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
+
 call plug#end()
 
 set encoding=utf-8
@@ -43,6 +45,10 @@ let g:colorizer_auto_color = 1
 set relativenumber
 
 let mapleader=" "
+
+" CP cpp binds
+au FileType cpp nmap <silent> <leader>gc :!make %:r && ./%:r
+
 
 " Coc rename
 nmap <leader>r :CocCommand document.renameCurrentWord<CR>
@@ -76,7 +82,7 @@ nmap <silent> <C-p> :Files<CR>
 let	g:user_emmet_leader_key="<c-m>" 
 let g:user_emmet_mode='a'
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html EmmetInstall
 
 " yank to clipboard
 nnoremap <C-y> "+y
@@ -119,8 +125,17 @@ nmap <silent> <leader>f :CocFix<CR>
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " Quick terminal
+
 set splitbelow
-nmap <silent> <leader>tt :execute ":split term://".input("Command: ","zsh","shellcmd")""<CR>
+
+let g:last_quick_term=""
+
+function! QuickTerm()
+	let g:last_quick_term = input("CMD: ",g:last_quick_term,"shellcmd")
+	execute "split term://" . g:last_quick_term
+endfunction
+
+nmap <silent> <leader>t :call QuickTerm()<CR>
 tnoremap <Esc> <C-\><C-n>
 tnoremap <C-w> <C-\><C-n><C-w>
 
@@ -131,9 +146,9 @@ command W :w
 command RootWrite :w !sudo tee %
 
 " Binds for tab work
-nmap <leader>te :tabnew<Space>
-nmap <leader>tn :tabn<CR>
-nmap <leader>tp :tabp<CR>
+" nmap <leader>te :tabnew<Space>
+" nmap <leader>tn :tabn<CR>
+" nmap <leader>tp :tabp<CR>
 
 " GUI specific things
 set guifont=GohuGohuFont\ Nerd\ Font\ 11
@@ -234,5 +249,4 @@ let g:dashboard_custom_shortcut_icon={
 			\}
 
 nohlsearch
-
 
