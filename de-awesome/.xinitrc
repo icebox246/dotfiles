@@ -13,8 +13,8 @@ mpc stop
 # Setting keymap
 setxkbmap pl &
 
-# Disable screen saving
-xset s off
+# simple script for multimonitor
+fix2screen &
 
 # Setting background image 
 ~/.fehbg &
@@ -33,9 +33,6 @@ play-with-mpv &
 
 # settings for blanking
 xset dpms 900 0 0
-
-# simple script for multimonitor
-fix2screen &
 
 # start window manager
 awesome

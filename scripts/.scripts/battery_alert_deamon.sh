@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ -d /syc/class/power_supply/BAT0 ] && BAT=/sys/class/power_supply/BAT0 || 
+[ -d /sys/class/power_supply/BAT0 ] && BAT=/sys/class/power_supply/BAT0 || 
 	BAT=/sys/class/power_supply/BAT1
 
 while true; do
