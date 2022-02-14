@@ -9,6 +9,7 @@
 
  local menu251bd8143891238ecedc306508e29017 = {
      {"GZDoom", "gzdoom ", "/usr/share/icons/hicolor/256x256/apps/gzdoom.xpm" },
+     {"Quake", "quakespasm", "/usr/share/icons/hicolor/16x16/apps/quakespasm.png" },
      {"Steam (Runtime)", "/usr/bin/steam-runtime ", "/usr/share/icons/hicolor/16x16/apps/steam.png" },
  }
 
@@ -19,6 +20,7 @@
      {"Inkscape", "inkscape ", "/usr/share/icons/hicolor/16x16/apps/org.inkscape.Inkscape.png" },
      {"Krita", "krita ", "/usr/share/icons/hicolor/16x16/apps/krita.png" },
      {"LibreOffice Draw", "libreoffice --draw ", "/usr/share/icons/hicolor/16x16/apps/libreoffice-draw.png" },
+     {"MyPaint", "mypaint "},
      {"XDvi", "xdvi "},
  }
 

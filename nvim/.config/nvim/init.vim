@@ -107,6 +107,8 @@ let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_extra_conf.py"
 
 hi Normal guibg=#282a36 ctermbg=NONE
 
+hi CocCursorRange ctermfg=black ctermbg=cyan guifg=black guibg=#6A9FAE
+
 " Indenting
 let g:clang_format#style_options = {
 			\ "BasedOnStyle": "Google",
