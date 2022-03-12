@@ -1,0 +1,29 @@
+# Image previews
+
+set previewer stpv
+set cleaner stpvimgclr
+&stpvimg --listen $id
+cmd on-quit $stpvimg --end $id
+
+# Show sizes
+
+set info size
+
+# Toggle dircounts
+
+map zs set dircounts!
+set dircounts
+set info size
+
+# Map deleting
+
+map D delete
+
+# Enable numbers
+
+set number
+set relativenumber
+
+# Incremental searching
+
+set incsearch
