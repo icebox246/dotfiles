@@ -87,9 +87,9 @@ super + shift + F6
 super + control + F6
 	~/.screenlayout/big_monitor.sh
 
-# Open up ranger
+# Open up lf
 super + f
-	alacritty -e ~/.scripts/ranger
+	alacritty -e lf
 
 # Toggle notifications
 super + F11
