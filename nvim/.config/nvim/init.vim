@@ -46,6 +46,9 @@ set relativenumber
 
 let mapleader=" "
 
+" Nasm highlighting
+au FileType asm set syntax=nasm
+
 " CP cpp binds
 au FileType cpp nmap <silent> <leader>gc :!make %:r && ./%:r
 
