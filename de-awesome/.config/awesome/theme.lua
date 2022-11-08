@@ -17,7 +17,8 @@ function dpi(a)
     return a
 end
 
-theme.font          = "Gohu GohuFont Nerd Font 14px"
+-- theme.font          = "Gohu GohuFont Nerd Font 14px"
+theme.font          = "Terminus 14px"
 
 theme.bg_normal     = "#282a36ef"
 theme.bg_focus      = "#6e5991ef"
