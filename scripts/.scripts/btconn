@@ -1,0 +1,16 @@
+#!/bin/sh
+
+bluetoothctl power on || \
+    notify-send -i package-broken "btconn" "Failed to power on Bluetooth"
+
+BTDEVICE=`bluetoothctl devices | cut -d' ' -f2- | dmenu -i -l 10 -p Connect:`
+
+[ -z "$BTDEVICE" ] && exit 1
+
+BTMAC=`echo $BTDEVICE | cut -d' ' -f1`
+
+if bluetoothctl connect "$BTMAC"; then
+    notify-send -i package-install "btconn" "Connected successfully"
+else
+    notify-send -i package-broken "btconn" "Failed to connect to: $BTDEVICE"
+fi
